@@ -44,14 +44,14 @@ Example: `./ping 10 0 2 15 10 0 2 2`
 
 `nslookup` queries the provided Domain Name System nameserver to resolve the requested name to an IPv4 address. The nameserver must be recursive and answer on UDP port 53. TCP DNS queries are not currently supported.
 
-Usage: `./nslookup so ur ce ip re so lv er name`
+Usage: `./nslookup so ur ce ip re so lv er name`  
 Example: `./nslookup 10 0 2 15 8 8 8 8 google.com`
 
 ### `ntp`
 
 `ntp` queries the provided NTPv3-compatible server to obtain the current time. The second address provided is the nameserver to resolve the name of the NTP server. It adjusts the NTP epoch to the Unix epoch and displays the stratum, refid and time as received. It does not set the clock -- you get to do that. If you pass the `-i` option, then an IP address is accepted instead of a nameserver address and hostname.
 
-Usage: `./ntp [-i] so ur ce ip se rv er ip [hostname]`
+Usage: `./ntp [-i] so ur ce ip se rv er ip [hostname]`  
 Example: `./ntp 10 0 2 15 8 8 8 8 pool.ntp.org`
 
 ### `minisock`
@@ -60,8 +60,8 @@ Example: `./ntp 10 0 2 15 8 8 8 8 pool.ntp.org`
 
 This utility can be used to construct client queries compatible with HTTP/1.x, Gopher, finger, Whois and other similar protocols of the command-response variety.
 
-Usage: `./minisock [-in] so ur ce ip se rv er ip [servername] port [string] [string] ...`
-Example (Gopher): `./minisock 10 0 2 15 8 8 8 8 gopher.floodgap.com 70 ""`
+Usage: `./minisock [-in] so ur ce ip se rv er ip [servername] port [string] [string] ...`  
+Example (Gopher): `./minisock 10 0 2 15 8 8 8 8 gopher.floodgap.com 70 ""`  
 Example (HTTP/1.x): `./minisock 10 0 2 15 8 8 8 8 www.floodgap.com 80 "GET / HTTP/1.0" "Host: www.floodgap.com" "Connection: close" ""`
 
 ## Writing your own clients
