@@ -1,0 +1,8 @@
+bak
+bak/*
+MANIFEST.*
+*.o
+ping
+nslookup
+ntp
+minisock

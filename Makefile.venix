@@ -1,0 +1,25 @@
+# Venix's make is a bit daft
+
+OBJS = ping nslookup ntp minisock
+#CFLAGS = -O -DVENIX -DDEBUG
+CFLAGS = -O -DVENIX
+
+all: $(OBJS)
+
+ping: slip.o ping.o
+	cc -o $@ $?
+
+nslookup: nslookup.o slip.o dns.o
+	cc -o $@ $?
+
+minisock: minisock.o tcp.o slip.o dns.o
+	cc -o $@ $?
+
+ntp: ntp.o slip.o dns.o
+	cc -o $@ $?
+
+.c.o:
+	cc $(CFLAGS) -c $?
+
+clean:
+	rm -f *.o $(OBJS)
